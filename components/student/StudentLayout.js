@@ -20,11 +20,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-  { name: 'Reports', href: '#', current: false },
+  { name: 'Dashboard', href: '/student' },
+  { name: 'Leave', href: '/student/leave' },
+  { name: 'Mess', href: '/student/mess' },
+  { name: 'Hostel', href: '/student/hostel' },
 ]
 
 const user = {
@@ -37,10 +36,10 @@ const user = {
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Sign out', href: '/' },
 ]
 
-export default function StudentLayout({ children }) {
+export default function StudentLayout({ children, title = 'Student Dashboard', current = '/student' }) {
   return (
     <>
       <div className='min-h-full'>
@@ -55,18 +54,18 @@ export default function StudentLayout({ children }) {
                         <div className='flex-shrink-0'>
                           <img
                             className='h-8 w-8'
-                            src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
+                            src='/vercel.svg'
                             alt='Workflow'
                           />
                         </div>
                         <div className='hidden md:block'>
                           <div className='ml-10 flex items-baseline space-x-4'>
                             {navigation.map((item) => (
-                              <a
+                              <Link
                                 key={item.name}
                                 href={item.href}
                                 className={classNames(
-                                  item.current
+                                  item.href == current
                                     ? 'bg-sky-900 text-white'
                                     : 'text-sky-300 hover:bg-sky-700 hover:text-white',
                                   'px-3 py-2 rounded-md text-sm font-medium'
@@ -74,7 +73,7 @@ export default function StudentLayout({ children }) {
                                 aria-current={item.current ? 'page' : undefined}
                               >
                                 {item.name}
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -217,7 +216,7 @@ export default function StudentLayout({ children }) {
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
               <Link href='/student'>
 
-              <span className='text-3xl font-bold text-white'>Dashboard</span>
+              <span className='text-3xl font-bold text-white'>{title}</span>
               </Link>
             </div>
           </header>

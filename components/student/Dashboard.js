@@ -21,7 +21,13 @@ const cards = [
   },
   {
     name: 'Mess Fee Management',
-    href: 'student/messfee',
+    href: 'student/mess',
+    icon: ClipboardDocumentCheckIcon,
+    amount: '',
+  },
+  {
+    name: 'Hostel Management',
+    href: 'student/hostel',
     icon: ClipboardDocumentCheckIcon,
     amount: '',
   },

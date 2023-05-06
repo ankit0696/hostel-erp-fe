@@ -15,15 +15,6 @@ import axios from 'axios'
 import React, { useEffect, useMemo, useState } from 'react'
 import { toast } from 'react-toastify'
 
-const people = [
-  {
-    name: 'Lindsay Walton',
-    title: 'Front-end Developer',
-    email: 'lindsay.walton@example.com',
-    role: 'Member',
-  },
-  // More people...
-]
 
 export default function LeavePage() {
   // Modal to apply for leave
@@ -38,8 +29,6 @@ export default function LeavePage() {
   
   /**
    * Fetch all leaves for the current student
-   * @returns {Promise<void>}
-   * @memberof LeavePage
    */
   const getLeaves = async () => {
     try {
@@ -80,7 +69,7 @@ export default function LeavePage() {
   }, []);
 
   return (
-    <StudentLayout>
+    <StudentLayout title='Leave Management' current='/student/leave'>
       <div className='px-4 sm:px-6 lg:px-8'>
         <div className='sm:flex sm:items-center'>
           <div className='sm:flex-auto'>
