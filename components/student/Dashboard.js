@@ -22,7 +22,7 @@ const cards = [
   {
     name: 'Mess Fee Management',
     href: 'student/messfee',
-    icon: Mess,
+    icon: ClipboardDocumentCheckIcon,
     amount: '',
   },
   // More items...
