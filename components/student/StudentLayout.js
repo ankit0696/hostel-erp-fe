@@ -14,7 +14,6 @@ import {
 import Link from 'next/link'
 import 'ag-grid-community/styles/ag-grid.css'; // Core grid CSS, always needed
 import 'ag-grid-community/styles/ag-theme-alpine.css'; // Optional theme CSS
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function classNames(...classes) {
@@ -231,7 +230,6 @@ export default function StudentLayout({ children }) {
           </div>
         </div>
       </main>
-      <ToastContainer />
       <Footer />
     </>
   )

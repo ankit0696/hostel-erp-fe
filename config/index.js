@@ -1,9 +1,3 @@
-import {
-  AtSymbolIcon,
-  ExclamationCircleIcon,
-  FaceSmileIcon,
-  PhoneIcon,
-} from '@heroicons/react/20/solid'
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'
 
