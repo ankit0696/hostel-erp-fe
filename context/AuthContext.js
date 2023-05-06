@@ -102,7 +102,11 @@ export const AuthProvider = ({ children }) => {
     }
     catch (error) {
       console.log('error', error)
-      toast.error('Login Failed')
+      toast.update(toastId.current, {
+        render: 'Login Failed',
+        type: toast.TYPE.ERROR,
+        autoClose: 3000,
+      })
     }
   }
 
