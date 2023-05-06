@@ -33,7 +33,7 @@ export default function Footer() {
               className='h-20'
               width={80}
               height={80}
-              src='./vercel.svg'
+              src='/vercel.svg'
               alt={`${COMPANY_NAME} logo`}
             />
             {/* Company Name as header */}
